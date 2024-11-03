@@ -3,7 +3,7 @@ use std::{env, fs, path::PathBuf, process, time::Duration};
 
 use crate::utils::ShellRunner;
 
-const SHELL_TIMEOUT: Duration = Duration::from_secs(3);
+const SHELL_TIMEOUT: Duration = Duration::from_secs(5);
 
 fn generate_temp_file_name() -> PathBuf {
     let temp_dir = env::temp_dir();
