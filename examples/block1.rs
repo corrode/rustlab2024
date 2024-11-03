@@ -49,7 +49,7 @@ fn show_prompt() {
     let mut stdout = std::io::stdout();
     if stdout.is_terminal() {
         write!(stdout, "> ").unwrap();
-        // Flush stoud to ensure the prompt is displayed.
+        // Flush stdout to ensure the prompt is displayed.
         stdout.flush().expect("can't flush stdout");
     }
 }
