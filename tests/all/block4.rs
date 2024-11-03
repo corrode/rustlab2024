@@ -3,7 +3,7 @@ use std::{env, fs, path::PathBuf, process, time::Duration};
 
 use crate::utils::ShellRunner;
 
-const SHELL_TIMEOUT: Duration = Duration::from_secs(5);
+const SHELL_TIMEOUT: Duration = Duration::from_secs(10);
 
 fn generate_temp_file_name() -> PathBuf {
     let temp_dir = env::temp_dir();
@@ -27,7 +27,7 @@ fn test_history() {
         .example("block4")
         // This test takes longer to complete sometimes so we increase the
         // timeout
-        .kill_after(SHELL_TIMEOUT + Duration::from_secs(5))
+        .kill_after(SHELL_TIMEOUT)
         .run();
 
     let history_contents = fs::read_to_string(history_path).unwrap();
