@@ -1,5 +1,4 @@
-use std::io;
-fn main() -> io::Result<()> {
+fn main() {
     loop {
         // Read line from standard input
         // Parse line into executable command
