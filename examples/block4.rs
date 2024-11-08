@@ -210,10 +210,7 @@ impl Parser {
         let next = self.tokens.get(self.current).map(|s| s.to_string());
         next.and_then(|next| {
             self.current += 1;
-            match Element::parse_operator(&next) {
-                Some(operator) => Some(operator),
-                None => self.parse_cmd(next).map(Element::Cmd),
-            }
+            Element::parse_operator(&next).or_else(|| self.parse_cmd(next).map(Element::Cmd))
         })
     }
 
